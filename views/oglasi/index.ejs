@@ -1,0 +1,26 @@
+<h2>Search Oglasi</h2>
+<form action="/oglasi" method="GET">
+<label>Name</label>
+<input type="text" name="name" >
+<button type="submit">Search</button>
+</form>
+<br>
+<%oglasi.forEach(oglas=> { %>
+
+    <div>
+        <label>Adresa</label>
+        <%=oglas.adresa%>
+    </div>
+    <div>
+        <a href="/oglasi/<%= oglas.id %>"><%= oglas.naslov%></a>
+        <a href="/oglasi/<%= oglas.id %>/edit">Edit</a>
+    </div>
+    <div>
+        <label>Description</label>
+        <%=oglas.description%>
+    </div>
+    <%- include('../partials/deleteForm',
+              { url: `/oglasi/${oglas.id}` }) %>
+
+
+    <% }) %>

@@ -1,0 +1,27 @@
+<div>
+    <label>Naslov</label>
+    <input type="text" name="naslov" value="<%= oglas.naslov %>">
+</div>
+<div>
+    <label>Postavio</label>
+    <select name="user">
+        <% users.forEach( user => { %>
+            <% if(user.id === oglas.user) {%> 
+                <option selected label="<%= user.username %>" value="<%= user.id %>"></option>
+            <% } else{%> 
+                <option label="<%= user.username %>" value="<%= user.id %>"></option>
+            <% }})%> 
+    </select>
+</div>
+<div>
+    <label>Adresa</label>
+    <input type="text" name="adresa"  value="<%= oglas.adresa %>">
+</div>
+<div>
+    <label>Cover</label>
+    <input type="file" name="cover" >
+</div>
+<div>
+    <label>Description</label>
+    <textarea name="description"><%= oglas.description %></textarea>
+</div>

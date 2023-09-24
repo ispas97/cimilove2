@@ -1,0 +1,8 @@
+<h2><%= oglas.naslov %></h2>
+<div>Objavio: <%= oglas.user.username %></div>
+<div>Adresa: <%= oglas.adresa %></div>
+<div>Description: <%= oglas.description %></div>
+<a href="/oglasi/<%= oglas.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm',
+              { url: `/oglasi/${oglas.id}` }) %>
+<a href="/oglasi/<%= oglas.user.id %>">O Izdavacu</a>

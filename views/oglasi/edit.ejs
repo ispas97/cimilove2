@@ -1,0 +1,6 @@
+<h2>Edit Oglas</h2>
+<form action="/oglasi/<%= oglas.id %>?_method=PUT" method="POST" >
+    <%- include("_form_fields") %>
+    <a href="/oglasi">Cancel</a>
+    <button type="submit">Update</button>
+</form>
